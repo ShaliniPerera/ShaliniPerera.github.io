@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legends Home</title>
+    <link rel="stylesheet" type="text/css" href="styleDess.css" />
+
+  </head>
+  <?php
+     session_start();
+
+     include("connection.php");
+     include("functions.php");
+?>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="images/logo2.png" width="500px" height="100px">
+        </div>
+
+        <div class="menu">
+        <a href="home.php">Home</a>
+          <a href="shop.php">Shop</a>
+        </div>
+
+        <div class="item">
+          
+          <?php
+            if(!(isset($_SESSION['user_name']))){echo"
+              <a href='login.php'><button class='btn' onclick='login.php'>Login</button>
+              </a>";}
+            else{echo"
+              <a href='logout.php'><button class='btn' onclick='logout.php'>Log Out</button></a>";
+              }
+            ?>
+          
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="welcome-text">
+          <h1>Legends <br><br></h1>
+          <div class="hover">
+            <a href="shop.php">
+              <span></span>
+              <span></span>
+              <span></span>
+              Shop now
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  </body>
+</html>
